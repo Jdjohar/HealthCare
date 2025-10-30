@@ -177,6 +177,78 @@
         .why-card { min-height: auto; padding:16px; }
         .testimonial-slide { padding: 18px; }
       }
+      
+      .nav-links {
+  transition: transform 0.28s ease, opacity 0.28s ease;
+}
+
+/* When mobile, nav-links are hidden by default (you already hide at 768px),
+   but we need a visible style for .nav-links.active */
+@media (max-width: 768px) {
+  .nav-links {
+    position: fixed;
+    top: 70px; /* height of navbar */
+    right: 0;
+    left: 0;
+    background: rgba(255,255,255,0.98);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 18px 20px 30px;
+    z-index: 1500;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+    transform: translateY(-10px);
+    opacity: 0;
+    pointer-events: none;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+  }
+
+  .nav-links.active {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .nav-links a {
+    padding: 12px 8px;
+    font-size: 1.05rem;
+    color: var(--text-primary);
+  }
+
+  /* Show the hamburger button on mobile */
+  .mobile-menu-toggle {
+    display: flex;
+  }
+
+  /* Hamburger -> X animation */
+  .mobile-menu-toggle span {
+    width: 26px;
+    height: 3px;
+    background: var(--text-primary);
+    margin: 4px 0;
+    border-radius: 2px;
+    display: block;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+  }
+
+  .mobile-menu-toggle.active span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+  .mobile-menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+  .mobile-menu-toggle.active span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  /* When menu open, prevent body scroll (optional but recommended) */
+  body.nav-open {
+    height: 100vh;
+    overflow: hidden;
+  }
+}
     </style>
   </head>
 
@@ -189,7 +261,11 @@
           <!--<span class="logo-icon">💙</span>-->
           <!--<span class="logo-text" style="font-weight:700;">Omkaar 19</span>-->
         </div>
-
+<button class="mobile-menu-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="primary-navigation">
+  <span></span>
+  <span></span>
+  <span></span>
+</button>
         <div class="nav-links" style="display:flex;gap:12px;align-items:center;">
           <a href="#about">About</a>
           <a href="#services">Services</a>
