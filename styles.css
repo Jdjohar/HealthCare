@@ -834,6 +834,172 @@ body {
   }
 }
 
+/* Gallery Section */
+      .gallery {
+        padding: 80px 20px;
+        background: #f9f9f9;
+      }
+      a {
+          text-decoration: none !important;
+      }
+      .gallery .section-header {
+        text-align: center;
+        margin-bottom: 40px;
+      }
+      .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+      }
+      .gallery-item {
+        overflow: hidden;
+        border-radius: 16px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      }
+      .gallery-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform .3s ease;
+      }
+      .gallery-item img:hover {
+        transform: scale(1.05);
+      }
+
+      /* ============ New styles for added sections ============ */
+
+      /* Why Choose Us */
+      .why-choose {
+        padding: 60px 20px;
+        background: #fff;
+      }
+      .why-choose .container { max-width:1200px; margin:0 auto; }
+      .why-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 20px;
+        margin-top: 24px;
+      }
+      .why-card {
+        text-align: center;
+        padding: 22px;
+        border-radius: 12px;
+        background: linear-gradient(180deg,#ffffff,#f7fbff);
+        box-shadow: 0 6px 18px rgba(12,20,40,0.04);
+        min-height: 140px;
+      }
+      .why-card h3 { margin: 6px 0 8px; font-size: 18px; }
+      .why-card p { margin: 0; color:#555; font-size:14px; }
+
+      /* Testimonials (combined) */
+      .testimonials {
+        padding: 60px 20px;
+        background: #f7fbff;
+      }
+      .testimonials .container { max-width:1100px; margin:0 auto; }
+
+      /* Carousel */
+      .testimonials-carousel {
+        position: relative;
+        overflow: hidden;
+        max-width: 900px;
+        margin: 0 auto 30px auto;
+        border-radius: 12px;
+        background: #fff;
+        box-shadow: 0 6px 22px rgba(12,20,40,0.06);
+      }
+      .testimonials-carousel .carousel-track {
+        display: flex;
+        transition: transform 0.6s ease-in-out;
+        will-change: transform;
+      }
+      .testimonial-slide {
+        min-width: 100%;
+        box-sizing: border-box;
+        padding: 30px;
+      }
+      .testimonial-slide p {
+        font-size: 16px;
+        line-height: 1.5;
+        color: #222;
+        margin-bottom: 12px;
+      }
+      .testimonial-slide strong { color:#333; display:block; }
+
+      /* Static testimonials grid (original preserved) */
+      .testimonials-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
+        gap: 20px;
+      }
+      .testimonial-card {
+        background: #fff;
+        padding: 18px;
+        border-radius: 12px;
+        box-shadow: 0 6px 18px rgba(12,20,40,0.04);
+      }
+      .testimonial-rating .star { color: #f5a623; }
+
+      /* Training Courses */
+      .courses {
+        padding: 60px 20px;
+        background: #fff;
+      }
+      .courses .container { max-width:1100px; margin:0 auto; }
+      .course-card {
+        border-radius: 12px;
+        background: #fefefe;
+        padding: 18px;
+        margin-bottom: 18px;
+        box-shadow: 0 6px 18px rgba(12,20,40,0.04);
+      }
+      .course-card h3 { margin: 0 0 8px 0; display:flex; justify-content:space-between; align-items:center; gap:12px; }
+      .course-price { font-weight:700; color:#c0392b; }
+      .course-note { margin-top:10px; font-weight:600; color:#2c3e50; }
+
+      /* Charges */
+      .charges {
+        padding: 60px 20px;
+        background: #f7fbff;
+      }
+      .charges .container { max-width:1100px; margin:0 auto; }
+      .charge-card {
+        border-radius: 12px;
+        background: #fff;
+        padding: 16px;
+        margin-bottom: 14px;
+        box-shadow: 0 6px 18px rgba(12,20,40,0.04);
+      }
+      .charge-price { font-weight:700; color:#16a085; }
+
+      /* Payment QR */
+      .payment {
+        padding: 40px 20px;
+        background: #fff;
+        text-align: center;
+      }
+      .payment img { width:240px; height:240px; object-fit:contain; border-radius:8px; box-shadow: 0 8px 24px rgba(12,20,40,0.08); }
+
+      /* Simple utility */
+      .section-header { text-align:center; }
+      .section-title { font-size:28px; margin-bottom:6px; }
+      .section-subtitle { color:#666; margin-bottom:18px; }
+
+      /* Buttons */
+      .btn { display:inline-block; padding:10px 16px; border-radius:8px; border:none; cursor:pointer; font-weight:600; }
+      .btn-primary { background:#2b6ef6; color:#fff; }
+      .btn-outline { background:transparent; border:1px solid #2b6ef6; color:#2b6ef6; }
+
+      /* Footer small fix */
+      .footer { background:#222; color:#fff; padding:30px 20px; margin-top:30px; }
+      .footer a { color:#fff; text-decoration:none; }
+
+      /* Responsive tweaks */
+      @media (max-width:700px) {
+        .why-card { min-height: auto; padding:16px; }
+        .testimonial-slide { padding: 18px; }
+      }
+
 @media (max-width: 480px) {
   .container {
     padding: 0 16px;
